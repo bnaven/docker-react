@@ -5,15 +5,3 @@ services:
 before_install:
   - docker build -t  bnaven1/docker-react . 
 
-deploy:
-  provider: elasticbeanstalk
-  region: "eu-west-2"
-  app: "docker"
-  env: "NavReactDocker-env"
-  bucket-name: "elasticbeanstalk-eu-west-2-512047505278"
-  bucket-path: "docker"
-  on:
-    branch: master
-  access_key_id: $AWS_Access_Key
-  secret_access_key: 
-    secure: "$AWS_Secret_Key"
